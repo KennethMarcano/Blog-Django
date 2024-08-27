@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -12,19 +12,19 @@
     <section>
         <h1>{{ post.title }}</h1>
         <p class="comment">{{ post.body }}</p>
-        <p><em>Creado en: {{ post.created_at }}</em></p>
+        <p><em>Criado em: {{ post.created_at }}</em></p>
 
         <h3>Comentarios:</h3>
         <ul>
             {% for comment in post.comments.all %}
             <li>
                 {{ comment.text }} - <strong>{{ comment.author }}</strong>
-                <p><em>Creado en: {{ comment.created_at }}</em></p>
+                <p><em>Criado em: {{ comment.created_at }}</em></p>
                 <div class="containter-button">
                     <a class="button" href="{% url 'comment_edit' post.id comment.id %}">Editar</a>
                     <form method="post" action="{% url 'comment_delete' post.id comment.id %}">
                         {% csrf_token %}
-                        <button class="button" type="submit">Borrar</button>
+                        <button class="button" type="submit" onclick="return confirm('¿Você quer apagar o comentario?')">Apagar</button>
                     </form>
                 </div>
             </li>
@@ -33,13 +33,13 @@
         </ul>
 
         <form class="form" method="post">
-            <h3>Agregar Comentario</h3>
+            <h3>Adicionar Comentario</h3>
             {% csrf_token %}
             {{ comment_form.as_p }}
-            <button type="submit">Agregar</button>
+            <button type="submit">Adicionar</button>
         </form>
 
-        <a class="button-back" href="{% url 'post_list' %}">Volver a la lista de posts</a>
+        <a class="button-back" href="{% url 'post_list' %}">Voltar</a>
     </section>
 
     <script src="{% static 'blog/js/index.js' %}"></script>  

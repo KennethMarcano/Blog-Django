@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Borrar Post</title>
+    <title>Apagar Post</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
 </head>
 
 <body>
     <section>
-        <h1>Borrar Post: {{ post.title }}</h1>
-        <p>¿Estás seguro de que deseas borrar este post?</p>
+        <h1>Apagar Post: {{ post.title }}</h1>
+        <p>¿Você quer apagar este post?</p>
 
         <form method="post" novalidate>
             {% csrf_token %}
-            <button type="submit">Confirmar Borrado</button>
+            <button type="submit">Confirmar</button>
         </form>
 
         <a href="{% url 'post_list' %}">Cancelar</a>
