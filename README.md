@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 3) Faz as migrações: 
 ```
-python manage.py migrate  
+python3 manage.py migrate  
 ```
 4) Executa o servidor:
 
@@ -51,7 +51,7 @@ django-admin startproject
 
 Na sequencia criei a aplicação 'blog' com:
 ```
-python manage.py startapp
+python3 manage.py startapp
 ```
 
 Depois seguendo os forum e a documentaçao criei os models para los Posts e comentarios e fiz as migrações.
