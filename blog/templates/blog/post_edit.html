@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Post</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+
+<body>
+    <section>
+        <h2>Editar Post:</h2>
+
+        <form class="form" method="post">
+            {% csrf_token %}
+            {{ post_form.as_p }}
+            <button type="submit">Guardar Cambios</button>
+        </form>
+
+        <a class="button-back" href="{% url 'post_list' %}">Cancelar</a>
+    </section>
+
+</body>
+
+</html>

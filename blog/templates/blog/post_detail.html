@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+
+<body>
+    <section>
+        <h1>{{ post.title }}</h1>
+        <p class="comment">{{ post.body }}</p>
+        <p><em>Creado en: {{ post.created_at }}</em></p>
+
+        <h3>Comentarios:</h3>
+        <ul>
+            {% for comment in post.comments.all %}
+            <li>
+                {{ comment.text }} - <strong>{{ comment.author }}</strong>
+                <p><em>Creado en: {{ comment.created_at }}</em></p>
+                <div class="containter-button">
+                    <a class="button" href="{% url 'comment_edit' post.id comment.id %}">Editar</a>
+                    <form method="post" action="{% url 'comment_delete' post.id comment.id %}">
+                        {% csrf_token %}
+                        <button class="button" type="submit">Borrar</button>
+                    </form>
+                </div>
+            </li>
+            
+            {% endfor %}
+        </ul>
+
+        <form class="form" method="post">
+            <h3>Agregar Comentario</h3>
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit">Agregar</button>
+        </form>
+
+        <a class="button-back" href="{% url 'post_list' %}">Volver a la lista de posts</a>
+    </section>
+
+    <script src="{% static 'blog/js/index.js' %}"></script>  
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Archivos de configuración de Python  
+__pycache__/  
+*.py[cod]  
+
+# Entornos virtuales  
+venv/  
+env/  
+ENV/  
+.venv/  
+
+# Archivos de base de datos SQLite  
+*.sqlite3  
+
+# Archivos de configuración de Django  
+*.log  
+*.pot  
+*.pyc  
+*.pyo  
+*.pyd  
+
+# Archivos de configuración de IDEs  
+.idea/  
+.vscode/  

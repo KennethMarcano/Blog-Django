@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar comentario</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+
+<body>
+    <section>
+        <h2>Editar comentario</h2>
+        <h1>{{ post }}</h1>
+        <form class="form" method="post">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit">Guardar Cambios</button>
+        </form>
+
+    </section>
+
+</body>
+
+</html>
