@@ -15,4 +15,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  
 
     def __str__(self):  
-        return f'Comentario de {self.author} en el post {self.post}'  
+        return f'Comentario de: {self.author}. En el post: {self.post}'  
