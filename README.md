@@ -37,10 +37,3 @@ python3 manage.py runserver
 ```
 python3 manage.py test
 ```
-
-
-Criei os templates para mostrar a lista de posts, un post em especifico com seus comentarios e para editar os posts e comentarios,  estilizei os template com css y usei um pouco de js para mudar alungs atributos.
-
-Parece na sequencia mas na verdade trabalhei en tudo quase que ao mesmo tempo, um dependia do outro entao primeiro fiz para mostrar a rota principal onde ficam os posts e partindo disso fiz o resto como editar um post, ver um post em especifico com seus comentarios.
-
-Depois de conferir que as funcionalidades estavam prontas, fiz os testes, onde tive que pesquisar tambem mas despois de entender 2 exemplos consegui desenvolver os testes.
